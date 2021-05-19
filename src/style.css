@@ -261,6 +261,22 @@ button:hover {
   padding: 0.1% 0.5%;
 }
 
+.git-hub {
+  text-align: center;
+  color: #fcf8ec;
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+a.git-hub:hover {
+  text-decoration: underline #fcf8ec;
+  color: #fcf8ec;
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: normal;
+}
+
 .rounded {
   border-radius: 40px !important;
 }

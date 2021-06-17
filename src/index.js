@@ -1,3 +1,4 @@
+// Date & Time
 function formatDate() {
   if (currentDate === `${day}, ${month} ${date}, ${year} ${time}`)
     return `${day}, ${month} ${date}, ${year} ${time}`;
@@ -41,34 +42,13 @@ let currentDate = document.querySelector(".date-time");
 currentDate.innerHTML = `${day}, ${month} ${date}, ${year} ${time}`;
 formatDate();
 
-/* function showFahrenheit(event) {
-  event.preventDefault();
-  let temperature = document.querySelectorAll("p.card-text");
-  let fahrenheit = Math.round((17 * 9) / 5 + 32);
-  temperature.forEach(function (title) {
-    title.innerHTML = `${fahrenheit}°`;
-  });
-}
-
-function showCelsius(event) {
-  event.preventDefault();
-  let temperature = document.querySelectorAll("p.card-text");
-  let celsius = Math.round(((32 - 32) * 5) / 9);
-  temperature.forEach(function (title) {
-    title.innerHTML = `${celsius}°`;
-  });
-}
-
-let fahrenheitTemperature = document.querySelector("#fahrenheit");
-fahrenheitTemperature.addEventListener("click", showFahrenheit);
-
-let celsiusTemperature = document.querySelector("#celsius");
-celsiusTemperature.addEventListener("click", showCelsius); */
-
-// Challenge 1
+// Search for Weather & Temperature
 function searchWeather(response) {
   let temperatureElement = document.querySelectorAll("p.card-text");
-  let temperature = Math.round(response.data.main.temp);
+  let temperature = Math.round(celsiusTemperature);
+
+  celsiusTemperature = response.data.main.temp;
+
   temperatureElement.forEach(function (title) {
     title.innerHTML = `${temperature}°`;
   });
@@ -77,6 +57,36 @@ function searchWeather(response) {
   });
 }
 
+// Temperature & Degrees
+ function showFahrenheit(event) {
+  event.preventDefault();
+  let temperature = document.querySelectorAll("p.card-text");
+  let fahrenheit = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrenheit);
+  temperature.forEach(function (title) {
+    title.innerHTML = `${fahrenheit}°`;
+  });
+}
+
+function showCelsius(event) {
+  event.preventDefault();
+  let temperature = document.querySelectorAll("p.card-text");
+  let celsius = celsiusTemperature;
+  temperature.innerHTML = Math.round(celsius);
+  temperature.forEach(function (title) {
+    title.innerHTML = `${celsius}°`;
+  });
+}
+
+let fahrenheitTemperatureLink = document.querySelector("#fahrenheit");
+fahrenheitTemperatureLink.addEventListener("click", showFahrenheit);
+
+let celsiusTemperatureLink = document.querySelector("#celsius");
+celsiusTemperatureLink.addEventListener("click", showCelsius); 
+
+let celsiusTemperature = null;
+
+// Search Form for City
 function searchCity(city) {
   let apiKey = "c1b8e5d3086a4fe8a65935253c49312a";
   let unit = "imperial";

@@ -61,7 +61,7 @@ function searchWeather(response) {
  function showFahrenheit(event) {
   event.preventDefault();
   let temperature = document.querySelectorAll("p.card-text");
-  let fahrenheit = (celsiusTemperature * 9) / 5 + 32;
+  let fahrenheit = Math.round((celsiusTemperature * 9) / 5 + 32);
   temperature.innerHTML = Math.round(fahrenheit);
   temperature.forEach(function (title) {
     title.innerHTML = `${fahrenheit}°`;
@@ -71,7 +71,7 @@ function searchWeather(response) {
 function showCelsius(event) {
   event.preventDefault();
   let temperature = document.querySelectorAll("p.card-text");
-  let celsius = celsiusTemperature;
+  let celsius = Math.round(celsiusTemperature);
   temperature.innerHTML = Math.round(celsius);
   temperature.forEach(function (title) {
     title.innerHTML = `${celsius}°`;

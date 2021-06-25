@@ -12,7 +12,7 @@ let days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday"
+  "Saturday",
 ];
 let day = days[now.getDay()];
 let date = now.getDate();
@@ -29,7 +29,7 @@ let months = [
   "September",
   "October",
   "November",
-  "December"
+  "December",
 ];
 let month = months[now.getMonth()];
 let hour = now.getHours() > 12 ? now.getHours() - 12 : now.getHours();
@@ -44,10 +44,9 @@ formatDate();
 
 // Search for Weather & Temperature
 function searchWeather(response) {
+  fahrenheitTemperature = response.data.main.temp;
   let temperatureElement = document.querySelectorAll("p.card-text");
-  let temperature = Math.round(celsiusTemperature);
-
-  celsiusTemperature = response.data.main.temp;
+  let temperature = Math.round(fahrenheitTemperature);
 
   temperatureElement.forEach(function (title) {
     title.innerHTML = `${temperature}°`;
@@ -61,7 +60,7 @@ function searchWeather(response) {
  function showFahrenheit(event) {
   event.preventDefault();
   let temperature = document.querySelectorAll("p.card-text");
-  let fahrenheit = Math.round((celsiusTemperature * 9) / 5 + 32);
+  let fahrenheit = Math.round(fahrenheitTemperature);
   temperature.innerHTML = Math.round(fahrenheit);
   temperature.forEach(function (title) {
     title.innerHTML = `${fahrenheit}°`;
@@ -71,7 +70,7 @@ function searchWeather(response) {
 function showCelsius(event) {
   event.preventDefault();
   let temperature = document.querySelectorAll("p.card-text");
-  let celsius = Math.round(celsiusTemperature);
+  let celsius = Math.round(((fahrenheitTemperature - 32) * 5) / 9);
   temperature.innerHTML = Math.round(celsius);
   temperature.forEach(function (title) {
     title.innerHTML = `${celsius}°`;
@@ -84,7 +83,7 @@ fahrenheitTemperatureLink.addEventListener("click", showFahrenheit);
 let celsiusTemperatureLink = document.querySelector("#celsius");
 celsiusTemperatureLink.addEventListener("click", showCelsius); 
 
-let celsiusTemperature = null;
+let fahrenheitTemperature = null;
 
 // Search Form for City
 function searchCity(city) {

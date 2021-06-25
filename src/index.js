@@ -52,7 +52,7 @@ function searchWeather(response) {
     title.innerHTML = `${temperature}°`;
   });
   document.querySelectorAll("h3.card-subtitle").forEach(function (city) {
-    city.innerHTML = response.data.name;
+    city.innerHTML = fahrenheitTemperature;
   });
 }
 

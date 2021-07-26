@@ -1,10 +1,6 @@
 // Date & Time
-function formatDate() {
-  if (currentDate === `${day}, ${month} ${date}, ${year} ${time}`)
-    return `${day}, ${month} ${date}, ${year} ${time}`;
-}
-
-let now = new Date();
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
 let days = [
   "Sunday",
   "Monday",
@@ -36,17 +32,21 @@ let hour = now.getHours() > 12 ? now.getHours() - 12 : now.getHours();
 let am_pm = now.getHours() >= 12 ? "PM" : "AM";
 hour = hour < 10 ? "0" + hour : hour;
 let minute = now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes();
-let seconds = now.getSeconds() < 10 ? "0" + now.getSeconds() : now.getSeconds();
-let time = hour + ":" + minute + ":" + seconds + " " + am_pm;
-let currentDate = document.querySelector(".date-time");
-currentDate.innerHTML = `${day}, ${month} ${date}, ${year} ${time}`;
-formatDate();
+
+let time = hour + ":" + minute + " " + am_pm;
+
+    return `${day}, ${month} ${date}, ${year} ${time}`;
+}
+
+
+
 
 // Search for Weather & Temperature
 function searchWeather(response) {
   fahrenheitTemperature = response.data.main.temp;
   let temperatureElement = document.querySelectorAll("p.card-text");
   let temperature = Math.round(fahrenheitTemperature);
+  let currentDate = document.querySelector(".date-time");
 
   temperatureElement.forEach(function (title) {
     title.innerHTML = `${temperature}°`;
@@ -54,6 +54,7 @@ function searchWeather(response) {
   document.querySelectorAll("h3.card-subtitle").forEach(function (city) {
     city.innerHTML = response.data.name;
   });
+  currentDate.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 // Temperature & Degrees

@@ -206,8 +206,17 @@ button:hover {
   font-size: 22px;
 }
 
-.icon {
+.weather-icon {
+  
 }
+.svg {
+  
+}
+
+.icon {
+
+}
+
 .fa-sun {
   margin: 30px auto;
   text-align: left;

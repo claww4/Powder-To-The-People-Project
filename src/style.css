@@ -206,6 +206,19 @@ button:hover {
   font-size: 22px;
 }
 
+.icon {
+  margin: 30px auto;
+  text-align: left;
+  display: block;
+  width: 100%;
+  border-radius: 30px;
+  vertical-align: middle;
+  padding: 15px;
+  font-size: 70px;
+  padding-top: 10px;
+  color: #fcf8ec;
+  padding-left: 26px;
+}
 .fa-sun {
   margin: 30px auto;
   text-align: left;

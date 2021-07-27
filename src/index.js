@@ -47,6 +47,7 @@ function searchWeather(response) {
   let temperatureElement = document.querySelectorAll("p.card-text");
   let temperature = Math.round(fahrenheitTemperature);
   let currentDate = document.querySelector(".date-time");
+  let iconElement = document.querySelector(".icon");
 
   temperatureElement.forEach(function (title) {
     title.innerHTML = `${temperature}°`;
@@ -55,6 +56,7 @@ function searchWeather(response) {
     city.innerHTML = response.data.name;
   });
   currentDate.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute("src", 'http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png');
 }
 
 // Temperature & Degrees

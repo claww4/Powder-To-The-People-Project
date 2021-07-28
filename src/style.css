@@ -207,47 +207,15 @@ button:hover {
 }
 
 .icon {
-}
-
-.fa-sun {
+  width: 111px;
   margin: 30px auto;
   text-align: left;
   display: block;
-  width: 100%;
   border-radius: 30px;
   vertical-align: middle;
   padding: 15px;
   font-size: 70px;
   padding-top: 10px;
-  color: #fcf8ec;
-  padding-left: 26px;
-}
-
-.fa-cloud-showers-heavy {
-  margin: 30px auto;
-  text-align: left;
-  display: block;
-  width: 100%;
-  border-radius: 30px;
-  vertical-align: middle;
-  padding: 15px;
-  font-size: 70px;
-  padding-top: 10px;
-  color: #fcf8ec;
-  padding-left: 26px;
-}
-
-.fa-snowflake {
-  margin: 30px auto;
-  text-align: left;
-  display: block;
-  width: 100%;
-  border-radius: 30px;
-  vertical-align: middle;
-  padding: 15px;
-  font-size: 70px;
-  padding-top: 10px;
-  color: #fcf8ec;
   padding-left: 26px;
 }
 

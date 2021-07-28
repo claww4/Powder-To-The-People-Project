@@ -56,7 +56,7 @@ function searchWeather(response) {
     city.innerHTML = response.data.name;
   });
   currentDate.innerHTML = formatDate(response.data.dt * 1000);
-  iconElement.setAttribute("src", `icons/${response.data.weather[0].icon}.svg`);
+  iconElement.setAttribute("src", `icons/${response.data.weather[0].icon}.png`);
 }
 
 // Temperature & Degrees

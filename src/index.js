@@ -48,6 +48,7 @@ function searchWeather(response) {
   let temperature = Math.round(fahrenheitTemperature);
   let currentDate = document.querySelector(".date-time");
   let iconElements = document.querySelectorAll(".icon");
+  let descriptionElements = document.querySelectorAll("#description");
 
   temperatureElement.forEach(function (title) {
     title.innerHTML = `${temperature}°`;
@@ -62,6 +63,8 @@ function searchWeather(response) {
       `icons/${response.data.weather[0].icon}.png`
     );
   });
+  document.querySelectorAll("#description").forEach(function (descriptionElement){descriptionElement.innerHTML = response.data.weather[0].description;})
+  descriptionElements.forEach(function (descriptionElement){descriptionElement.setAttribute("alt", response.data.weather[0].description);})
 }
 
 // Temperature & Degrees

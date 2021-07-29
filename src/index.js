@@ -47,7 +47,7 @@ function searchWeather(response) {
   let temperatureElement = document.querySelectorAll("p.card-text");
   let temperature = Math.round(fahrenheitTemperature);
   let currentDate = document.querySelector(".date-time");
-  let iconElement = document.querySelector(".icon");
+  let iconElements = document.querySelectorAll(".icon");
 
   temperatureElement.forEach(function (title) {
     title.innerHTML = `${temperature}°`;
@@ -56,7 +56,12 @@ function searchWeather(response) {
     city.innerHTML = response.data.name;
   });
   currentDate.innerHTML = formatDate(response.data.dt * 1000);
-  iconElement.setAttribute("src", `icons/${response.data.weather[0].icon}.png`);
+  iconElements.forEach(function (iconElement) {
+    iconElement.setAttribute(
+      "src",
+      `icons/${response.data.weather[0].icon}.png`
+    );
+  });
 }
 
 // Temperature & Degrees

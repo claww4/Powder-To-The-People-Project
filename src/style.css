@@ -261,6 +261,22 @@ a.git-hub:hover {
   font-weight: normal;
 }
 
+.netlify {
+  text-align: center;
+  color: #fcf8ec;
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+a.netlify:hover {
+  text-decoration: underline #fcf8ec;
+  color: #fcf8ec;
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: normal;
+}
+
 .rounded {
   border-radius: 40px !important;
 }

@@ -88,11 +88,23 @@ function showCelsius(event) {
   });
 }
 
-let fahrenheitTemperatureLink = document.querySelector("#fahrenheit");
-fahrenheitTemperatureLink.addEventListener("click", showFahrenheit);
+let fahrenheitTemperatureLink1 = document.querySelector("#fahrenheit1");
+fahrenheitTemperatureLink1.addEventListener("click", showFahrenheit);
 
-let celsiusTemperatureLink = document.querySelector("#celsius");
-celsiusTemperatureLink.addEventListener("click", showCelsius); 
+let fahrenheitTemperatureLink2 = document.querySelector("#fahrenheit2");
+fahrenheitTemperatureLink2.addEventListener("click", showFahrenheit);
+
+let fahrenheitTemperatureLink3 = document.querySelector("#fahrenheit2");
+fahrenheitTemperatureLink3.addEventListener("click", showFahrenheit);
+
+let celsiusTemperatureLink1 = document.querySelector("#celsius1");
+celsiusTemperatureLink1.addEventListener("click", showCelsius);
+
+let celsiusTemperatureLink2 = document.querySelector("#celsius2");
+celsiusTemperatureLink2.addEventListener("click", showCelsius); 
+
+let celsiusTemperatureLink3 = document.querySelector("#celsius3");
+celsiusTemperatureLink3.addEventListener("click", showCelsius); 
 
 let fahrenheitTemperature = null;
 

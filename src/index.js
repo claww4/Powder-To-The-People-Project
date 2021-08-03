@@ -65,7 +65,15 @@ function searchWeather(response) {
   });
   document.querySelectorAll("#description").forEach(function (descriptionElement){descriptionElement.innerHTML = response.data.weather[0].description;})
   descriptionElements.forEach(function (descriptionElement){descriptionElement.setAttribute("alt", response.data.weather[0].description);})
+
+  function titleCase(str) {
+return str.toLowerCase().split(' ').map(function(word) {
+    return word.replace(word[0], word[0].toUpperCase());
+  }).join(' ');}
+  titleCase(response.data.weather[0].description);
+
 }
+
 
 // Temperature & Degrees
  function showFahrenheit(event) {
@@ -149,3 +157,5 @@ let currentLocationButton = document.querySelector("#geolocation-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Denver");
+
+

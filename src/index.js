@@ -63,15 +63,19 @@ function searchWeather(response) {
       `icons/${response.data.weather[0].icon}.png`
     );
   });
-  document.querySelectorAll("#description").forEach(function (descriptionElement){descriptionElement.innerHTML = response.data.weather[0].description;})
-  descriptionElements.forEach(function (descriptionElement){descriptionElement.setAttribute("alt", response.data.weather[0].description);})
+  document.querySelectorAll("#description").forEach(function (descriptionElement){descriptionElement.innerHTML = titleCase(response.data.weather[0].description);})
+  descriptionElements.forEach(function (descriptionElement){descriptionElement.setAttribute("alt", titleCase(response.data.weather[0].description));})
 
-  function titleCase(str) {
-return str.toLowerCase().split(' ').map(function(word) {
-    return word.replace(word[0], word[0].toUpperCase());
-  }).join(' ');}
-  titleCase(response.data.weather[0].description);
+}
 
+function titleCase(str) {
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map(function (word) {
+      return word.replace(word[0], word[0].toUpperCase());
+    })
+    .join(" ");
 }
 
 

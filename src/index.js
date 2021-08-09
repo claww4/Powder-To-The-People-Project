@@ -154,6 +154,15 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+function collapseButton(event) {
+  let myCollapse = document.querySelector("#collapseFeature1");
+  let bsCollapse = new mdb.Collapse(myCollapse);
+bsCollapse.show();
+  }
+
+let collapseFeature = document.querySelector("#toggleButton");
+collapseFeature.addEventListener('show.bs.collapse', collapseButton);   
+
 let button = document.querySelector("#location-form");
 button.addEventListener("submit", handleSubmit);
 

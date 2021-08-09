@@ -400,3 +400,18 @@ a.netlify:hover {
 .fahrenheit {
   color: #0d335d;
 }
+
+.collapse-style {
+  font-size: 25px;
+  text-align: center;
+  text-decoration: none;
+  color: #212529;
+}
+
+.collapse {
+
+}
+
+.show {
+  
+}

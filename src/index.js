@@ -30,7 +30,6 @@ let months = [
 let month = months[now.getMonth()];
 let hour = now.getHours() > 12 ? now.getHours() - 12 : now.getHours();
 let am_pm = now.getHours() >= 12 ? "PM" : "AM";
-hour = hour < 10 ? "0" + hour : hour;
 let minute = now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes();
 
 let time = hour + ":" + minute + " " + am_pm;
@@ -154,14 +153,6 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-function collapseButton(event) {
-  let myCollapse = document.querySelector("#collapseFeature1");
-  let bsCollapse = new mdb.Collapse(myCollapse);
-bsCollapse.show();
-  }
-
-let collapseFeature = document.querySelector("#toggleButton");
-collapseFeature.addEventListener('show.bs.collapse', collapseButton);   
 
 let button = document.querySelector("#location-form");
 button.addEventListener("submit", handleSubmit);

@@ -4,12 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
     <link rel="icon"
         href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/snow-capped-mountain_1f3d4-fe0f.png">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
+
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,6 +25,8 @@
     <script src="https://kit.fontawesome.com/93af78669d.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="src/style.css" />
+
+   
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Powder To The People</title>
 </head>
@@ -113,12 +122,12 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="#collapseFeature1" id="toggleButton" class="collapse-style" role="button" aria-expanded="false" aria-controls="collapseFeature1">
-                        <i class="fas fa-chevron-down"></i></a>
-                        <div class="collapse" class="show" id="collapseFeature1">
-                          Weekly Forecast Insert Here
-                          </div>
-           
+                        <a class="collapse-style" data-bs-toggle="collapse" href="#collapseFeature1" role="button" aria-expanded="false" aria-controls="collapseFeature1">
+                        <i class="fas fa-chevron-down"></i>
+           </a>
+        <div class="collapse" id="collapseFeature1">
+Weekly Weather Forecast With Scrollbar
+        </div>
                     </div>
                              
                 </div>
@@ -175,7 +184,13 @@
 
 
                     <div class="card-footer">
+                        <a class="collapse-style" data-bs-toggle="collapse" href="#collapseFeature2" role="button" aria-expanded="false"
+                            aria-controls="collapseFeature2">
                         <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="collapse" id="collapseFeature2">
+                            Weekly Weather Forecast With Scrollbar
+                        </div>
                     </div>
                 </div>
                 <div class="card rounded">
@@ -231,7 +246,13 @@
                     </div>
 
                     <div class="card-footer">
+                        <a class="collapse-style" data-bs-toggle="collapse" href="#collapseFeature3" role="button" aria-expanded="false"
+                            aria-controls="collapseFeature3">
                         <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="collapse" id="collapseFeature3">
+                            Weekly Weather Forecast With Scrollbar
+                        </div>
                     </div>
                 </div>
                 <span href="#" class="next round">&#8250;</span>

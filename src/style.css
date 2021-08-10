@@ -404,14 +404,24 @@ a.netlify:hover {
 .collapse-style {
   font-size: 25px;
   text-align: center;
-  text-decoration: none;
   color: #212529;
+  cursor: pointer;
 }
 
 .collapse {
-
+  &:not(.show) {
+    display: none;
+  }
 }
 
-.show {
-  
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  @include transition($transition-collapse);
+
+  &.collapse-horizontal {
+    width: 0;
+    height: auto;
+    @include transition($transition-collapse-width);
+  }
 }

@@ -337,6 +337,7 @@ a.netlify:hover {
 .card-footer {
   background-color: transparent;
   text-align: center;
+  cursor: pointer;
 }
 
 .snow-conditions {
@@ -409,12 +410,14 @@ a.netlify:hover {
 }
 
 .collapse {
+  cursor: pointer;
   &:not(.show) {
     display: none;
   }
 }
 
 .collapsing {
+  cursor: pointer;
   height: 0;
   overflow: hidden;
   @include transition($transition-collapse);
@@ -424,4 +427,44 @@ a.netlify:hover {
     height: auto;
     @include transition($transition-collapse-width);
   }
+}
+
+.overflow {
+  overflow-y: hidden;
+  overflow-x: auto;
+  cursor: pointer;
+}
+
+.col-2 {
+  flex: 0 0 auto;
+  width: 33%;
+  cursor: pointer;
+}
+
+.weather-forecast {
+  margin: 20px auto;
+  width: 100%;
+  display: block;
+  text-align: center;
+  color: #fcf8ec;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+}
+
+img.weather-forecast-icon {
+  width: 40px;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
+}
+
+.weather-forecast-temperature-max {
+}
+
+.weather-forecast-temperature-min {
 }

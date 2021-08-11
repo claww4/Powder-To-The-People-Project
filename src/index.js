@@ -37,6 +37,7 @@ let time = hour + ":" + minute + " " + am_pm;
     return `${day}, ${month} ${date}, ${year} ${time}`;
 }
 
+//Weekly Forecast
 
 
 
@@ -153,7 +154,6 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-
 let button = document.querySelector("#location-form");
 button.addEventListener("submit", handleSubmit);
 
@@ -161,5 +161,6 @@ let currentLocationButton = document.querySelector("#geolocation-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Denver");
+
 
 
